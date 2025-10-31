@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <title>Sobre mí - Stefan</title>
 
-  <!-- 🔥 LOGO EN EL TÍTULO -->
-  <link rel="icon" type="image/png" href="logo.png">
-
-  <!-- Estilos -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Iconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 </head>
 <body>
+  <!-- 🌙 Cielo nocturno -->
+  <div id="night-overlay">
+    <div class="moon"></div>
+    <div class="stars"></div>
+  </div>
+
   <div class="container">
     <div class="card">
-      <img src="memoji.svg" alt="Memoji" class="memoji">
+      <img src="memoji.svg" alt="Memoji" class="memoji" />
 
       <h1>Hola, soy Stefan :D</h1>
       <p class="subtitle">Programador y dev.</p>
@@ -65,9 +67,19 @@
         </div>
         <p class="Gmail">📧 Rusustefanyt@gmail.com</p>
       </div>
+
+      <div class="section musica">
+        <h2>🎵 Música</h2>
+        <audio id="musica" controls loop>
+          <source src="musica.mp3" type="audio/mpeg" />
+          Tu navegador no soporta la reproducción de audio.
+        </audio>
+      </div>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
+

@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, #000000, #89CFF0);
+  background-size: 400% 400%;
+  animation: fondoAnimado 10s ease-in-out infinite;
+  color: white;
+}
+
+@keyframes fondoAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.memoji {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.info p {
+  margin: 5px 0;
+}
+
+.section {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.section h2 {
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  color: #87cefa;
+}
+
+ul {
+  list-style: none;
+  margin-top: 8px;
+}
+
+ul li {
+  margin: 4px 0;
+}
+

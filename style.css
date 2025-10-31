@@ -1,4 +1,65 @@
-/* 🌙 FONDO NOCHE */
+/* ======== ESTILO BASE ======== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #000, #000);
+  color: white;
+  overflow-x: hidden;
+  transition: background 3s ease-in-out;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 600px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.memoji {
+  width: 150px;
+  border-radius: 50%;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #bbb;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.section {
+  margin-top: 1.5rem;
+}
+
+.section h2 {
+  color: #61dafb;
+  margin-bottom: 0.5rem;
+}
+
+.contacto a {
+  color: #7289da;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contacto a:hover {
+  text-decoration: underline;
+}
+
+/* ======== MODO NOCHE ======== */
 #night-overlay {
   position: fixed;
   top: 0;
@@ -13,7 +74,7 @@
   overflow: hidden;
 }
 
-/* 🌕 LUNA ORBITANDO */
+/* 🌕 Luna orbitando */
 .moon {
   position: absolute;
   top: 150px;
@@ -26,7 +87,7 @@
   animation: orbit 25s linear infinite;
 }
 
-/* ✨ ESTRELLAS */
+/* ✨ Estrellas */
 .stars {
   position: absolute;
   width: 100%;
@@ -36,13 +97,14 @@
   opacity: 0.6;
 }
 
-/* 🌙 Animaciones */
+/* Animaciones */
 @keyframes twinkle {
   from { opacity: 0.3; }
   to { opacity: 0.7; }
 }
 
 @keyframes orbit {
-  0%   { transform: rotate(0deg) translateX(400px) rotate(0deg); }
+  0% { transform: rotate(0deg) translateX(400px) rotate(0deg); }
   100% { transform: rotate(360deg) translateX(400px) rotate(-360deg); }
 }
+

@@ -1,6 +1,6 @@
 // 🎂 Calcular edad automáticamente (cada 5 de diciembre)
 function calcularEdad() {
-  const nacimiento = new Date(2009, 11, 5);
+  const nacimiento = new Date(2009, 11, 5); // 5 diciembre 2009
   const hoy = new Date();
   let edad = hoy.getFullYear() - nacimiento.getFullYear();
   const m = hoy.getMonth() - nacimiento.getMonth();
@@ -23,15 +23,37 @@ function activarModoNoche() {
 }
 activarModoNoche();
 
-// 🎶 Reproducir música (respetando bloqueo de autoplay)
-window.addEventListener("load", () => {
+// 🎶 Música autoplay sin bloqueo
+window.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("musica");
+  audio.volume = 0.0; // empieza en silencio
+  const tryPlay = audio.play();
 
-  // Algunos navegadores requieren interacción del usuario
-  const playMusic = () => {
-    audio.play().catch(() => {});
-    document.removeEventListener("click", playMusic);
-  };
-
-  document.addEventListener("click", playMusic);
+  if (tryPlay !== undefined) {
+    tryPlay
+      .then(() => {
+        // Subir volumen suavemente
+        setTimeout(() => {
+          let vol = 0.0;
+          const fade = setInterval(() => {
+            vol += 0.05;
+            if (vol >= 0.6) {
+              vol = 0.6;
+              clearInterval(fade);
+            }
+            audio.volume = vol;
+          }, 200);
+        }, 2000);
+      })
+      .catch(() => {
+        // Si aún así se bloquea, reintentar tras clic
+        console.log("Autoplay bloqueado, esperando interacción...");
+        const resume = () => {
+          audio.play().catch(() => {});
+          document.removeEventListener("click", resume);
+        };
+        document.addEventListener("click", resume);
+      });
+  }
 });
+
